@@ -13,7 +13,7 @@ public class Entrenador {
 		this.equipoPokemon = equipoPokemon;
 	}
 	
-	/*//getters////
+	/*//getters////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 	////-------------------------------------------------------------------------------------------------////
 	///--------------------------------------------------------------------------------------------------//*/
 	public String getNombre() {

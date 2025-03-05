@@ -1,7 +1,7 @@
 package HITO_I;
 
 public class Pokeball {
-	private int energia;
+	protected int energia;
 	
 	public Pokeball(int e) {
 		this.energia = e;

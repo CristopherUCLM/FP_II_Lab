@@ -86,6 +86,8 @@ public class Entrenador {
 	//--------------------------------------------------------------------------------------------------//*/
 	
 	//Capturar el pokemon
+	
+	/*@MODIFICARLO!*/
 	public boolean captura(Pokemon pokemon) {
 		
 		int imp = encontrarMejorPokeball(invPokeballs); //imp -> indice mejor pokeball

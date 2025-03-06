@@ -4,7 +4,7 @@ public class Entrenador { //Hola cris :D
 	
 	private String nombre;
 	private Pokeball [] invPokeballs = new Pokeball[6];
-	private Pokemon [] equipoPokemon = new Pokemon[3];
+	private Pokemon [] equipoPokemon = new Pokemon[6];
 	
 	//Constructor
 	public Entrenador(String nombre, Pokeball [] invPokeballs, Pokemon [] equipoPokemon) {
@@ -88,43 +88,19 @@ public class Entrenador { //Hola cris :D
 	//Capturar el pokemon
 	
 	/*@MODIFICARLO!*/
-	public boolean captura(Pokemon pokemon) {
+
+	public void captura(Pokemon p) {
 		
-		int imp = encontrarMejorPokeball(invPokeballs); //imp -> indice mejor pokeball
-		
-		//Comprueba si hay pokeballs disponibles
-		if(invPokeballs[imp].getEnergia() <= 0) {
-			System.out.printf("No hay pokeballs disponibles para capturar a %s.\n", pokemon.getNombre());
-			return false;
-		}
-		
-		//Comprobar que solo capture en el tercer intento
-		for(int i = 0; i<3; i++) {
-			imp = encontrarMejorPokeball(invPokeballs); //imp -> indice mejor pokeball
+		//Comprueba si hay espacio en el equipo
+		if(!equipoLleno() && ( pokeballDisponible(invPokeballs) != -1) ) {
 			
-			if(invPokeballs[imp].getEnergia() <= 0) { //Comprueba que haya pokeballs disponibles
-				System.out.println("Ninguna pokeball tiene más de 0 de integridad");
-				return false;
-			}
+			Pokeball pokeball = invPokeballs[pokeballDisponible(invPokeballs)]; //Creo una variable para almacenar el índice de la mejor pokeball
 			
-			if(i < 2) { // Si no estoy en la tercera captura, falla
-				invPokeballs[imp].setEnergia(invPokeballs[imp].getEnergia() - 4);
-				System.out.printf("La captura de %s falló!\n", pokemon.getNombre());
-			}
-			else{
-				if(equipoLleno(equipoPokemon)) {
-					System.out.printf("La captura de %s falló! No queda espacio en el equipo.\n", pokemon.getNombre());
-					return false;
-				}
-				else {
-					System.out.printf("La captura de %s fue exitosa campeón, mastodonte, ídolo, genio\n", pokemon.getNombre());
-					invPokeballs[imp].setEnergia(invPokeballs[imp].getEnergia() - 4);
-					return true;
-				}
-			}
+			if(pokeball.intentarCaptura(p)) { //Si la captura tiene éxito
+				agregarPokemon(p); //Agrega el pókemon al equipo
+			}//Si no tiene éxito, sale el mensaje de depuración en la clase Pokeball
+			
 		}
-		System.out.println("¿¿¿???¿?¿?¿?");
-		return false;
 		
 	}
 	
@@ -141,22 +117,23 @@ public class Entrenador { //Hola cris :D
 	}
 	
 	
-	//Método para buscar la pokeball con la mayor integridad
-	private static int encontrarMejorPokeball(Pokeball [] invPokeballs) {
-		int mejorIndice = 0;
-		for(int i = 0; i< invPokeballs.length; i++) {
+	public static int pokeballDisponible(Pokeball [] inv) { //Busca la primera pokeball disponible
+		
+		int indice = 0;
+		for(int i = 0; i < inv.length; i++) {
 			
-			if(invPokeballs[i].getEnergia() > invPokeballs[mejorIndice].getEnergia()) {
-				mejorIndice = i;
-			}
+			if( inv[i].getEnergia() > 0) {i = indice; break;}
+			else if(i == inv.length - 1) {System.out.println("No hay pokeballs disponibles"); indice = -1; }	//Comprueba que no esté dando por buena la última pokeball con energía menor a 0
+		
 		}
-		return mejorIndice;
+		
+		return indice; //Devuelve el índice de la primera pokeball disponible
 	}
 	
 	
 	
 	//Comprobar si el equipo está lleno y, por ende, puede capturar
-	public boolean equipoLleno(Pokemon [] equipoPokemon) {
+	public boolean equipoLleno() {
 		
 		for(int i = 0; i<equipoPokemon.length; i++) {
 			String nombre = equipoPokemon[i].getNombre();

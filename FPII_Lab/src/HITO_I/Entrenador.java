@@ -1,8 +1,14 @@
 package HITO_I; // Hola cris, habla Royui
 //soy ruoyi
 //Cambio
+
+//Soy cris al habla
+
+//Soy cris al habla
+
+//Soy cris al habla
 public class Entrenador {
-//otro	
+	
 	private String nombre;
 	private Pokeball [] invPokeballs = new Pokeball[6];
 	private Pokemon [] equipoPokemon = new Pokemon[3];

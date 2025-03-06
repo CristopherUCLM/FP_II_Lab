@@ -1,12 +1,6 @@
 package HITO_I; // Hola cris, habla Royui
 //soy ruoyi
 
-
-//Soy cris al habla
-
-//Cambio
-
-//Cambio
 public class Entrenador {
 	//adsjhasofhsaoifjsaffhaofhasoi
 	

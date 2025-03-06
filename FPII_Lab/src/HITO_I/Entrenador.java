@@ -1,4 +1,4 @@
-package HITO_I;
+package HITO_I; // Hola cris, habla Royui
 
 public class Entrenador {
 	

@@ -1,5 +1,7 @@
 package HITO_I; // Hola cris, habla Royui
 //soy ruoyi
+
+//Soy cris al habla
 public class Entrenador {
 	
 	private String nombre;

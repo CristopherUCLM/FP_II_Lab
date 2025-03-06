@@ -1,6 +1,6 @@
 package HITO_II;
 
-public class Entrenador {
+public class Entrenador { //Hola cris :D
 	
 	private String nombre;
 	private Pokeball [] invPokeballs = new Pokeball[6];

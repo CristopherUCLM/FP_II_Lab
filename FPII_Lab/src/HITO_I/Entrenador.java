@@ -8,7 +8,7 @@ package HITO_I; // Hola cris, habla Royui
 
 //Cambio
 public class Entrenador {
-	//adsjhasofhsaoif
+	//adsjhasofhsaoifjsaffhaofhasoi
 	
 	
 	

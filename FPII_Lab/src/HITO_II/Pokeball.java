@@ -1,7 +1,7 @@
 package HITO_II;
 
 public class Pokeball {
-	protected int energia;
+	protected int energia = 10;
 	
 	public Pokeball() {} //Constructor vacio para la masterball
 	

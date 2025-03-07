@@ -4,8 +4,7 @@ import HITO_II.Pokeball;
 import HITO_II.Pokemon;
 
 public class Masterball extends Pokeball{
-	
-	protected int energia = 10;
+
 	protected double estabilidad; //del 0 al 1. 
 	
 	public Masterball(double e){

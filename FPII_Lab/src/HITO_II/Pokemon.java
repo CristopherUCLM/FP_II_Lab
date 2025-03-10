@@ -6,12 +6,12 @@ public class Pokemon {
 	private String tipo;
 	protected int nivel, velocidad, salud;
 	
-	public Pokemon(String nombre, String tipo, int n, int v, int s) {
+	public Pokemon(String nombre, String tipo, int nivel, int velocidad, int salud) {
 		this.nombre = nombre;
 		this.tipo = tipo;
-		this.nivel = n;
-		this.velocidad = v;
-		this.salud = s;
+		this.nivel = nivel;
+		this.velocidad = velocidad;
+		this.salud = salud;
 	}
 	
 	//getter
@@ -35,8 +35,11 @@ public class Pokemon {
 		return this.salud;
 	}
 	
-	public void setSalud(int s) {
-		this.salud = s;
+	public void setSalud(int salud) {
+		this.salud = salud;
 	}
-
+	public void setNombre(String nombre) {this.nombre = nombre;}
+	public void setTipo(String tipo) {this.tipo = tipo;}
+	public void setNivel(int nivel) {this.nivel = nivel;}
+	public void setVelocidad(int velocidad) {this.velocidad = velocidad;}
 }

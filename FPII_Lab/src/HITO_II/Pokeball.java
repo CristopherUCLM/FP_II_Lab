@@ -5,22 +5,22 @@ public class Pokeball {
 	
 	public Pokeball() {} //Constructor vacio para la masterball
 	
-	public Pokeball(int e) {
-		this.energia = e;
+	public Pokeball(int energia) {
+		this.energia = energia;
 	}
 	
 	public int getEnergia() {
 		return this.energia;
 	}
 	
-	public void setEnergia(int e) {
-		this.energia = e;
+	public void setEnergia(int energia) {
+		this.energia = energia;
 	}
 	
 
 	
 	/*Métodos de lógica*/
-	public boolean intentarCaptura(Pokemon p) { //Probabilidad del 10%
+	public boolean intentarCaptura(Pokemon pokemon) { //Probabilidad del 10%
 		
 		int num = (int) Math.random()*100;
 		

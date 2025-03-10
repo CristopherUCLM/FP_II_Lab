@@ -15,7 +15,7 @@ public class Ultraball extends Pokeball{
         int num = (int) (Math.random()*100);
         // Se garantiza la captura si la potencia es mayor o igual a 0.4, si la potencia es menor a 0.4, se calcula la
         // probabilidad de captura en función de la potencia, la probabilidad es 50% inicial, y aumenta 20% por cada fallo
-        if(num<50+(potencia*100)||potencia >=4){
+        if(num<50+(potencia*100)||potencia >=0.4){
             return true;
         }else {
             potencia += 0.2;

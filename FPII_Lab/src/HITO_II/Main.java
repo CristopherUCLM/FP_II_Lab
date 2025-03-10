@@ -18,7 +18,7 @@ public class Main {
 		// Crear al entrenador Ash
 		Entrenador ash = new Entrenador("Ash", pokeballs, new Pokemon[6]);
 
-		// Crear Pokémon
+		// Crear Pokémones
 		Pokemon[] pokemons = {
 				new Pokemon("Pikachu", "Eléctrico", 1, 30, 100),
 				new Pokemon("Bulbasaur", "Planta", 1, 35, 100),

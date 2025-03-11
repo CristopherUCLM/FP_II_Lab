@@ -1,4 +1,6 @@
 package HITO_II;
+import HITO_II.Tipos_Pokeballs.*;
+
 
 public class Main {
 
@@ -11,12 +13,16 @@ public class Main {
 		pokeballs[0] = new Pokeball(4); // Pokéball clásica
 		pokeballs[1] = new Superball(12, 0); // SuperBall
 		pokeballs[2] = new Ultraball(12, 0.0); // UltraBall
-		pokeballs[3] = new Masterball(0.8); // MasterBall
+		pokeballs[3] = new Masterball(10, 0.8); // MasterBall
 		pokeballs[4] = new Pokeball(4); // Pokéball clásica
 		pokeballs[5] = new Superball(10, 0); // SuperBall
+		
+		Pokemon equipoPokemon [] = new Pokemon[6];
+		
+		for(int i = 0; i<equipoPokemon.length; i++) {equipoPokemon[i] = new Pokemon("Vacio", "", 0, 0,0);}
 
 		// Crear al entrenador Ash
-		Entrenador ash = new Entrenador("Ash", pokeballs, new Pokemon[6]);
+		Entrenador ash = new Entrenador("Ash", pokeballs, equipoPokemon);
 
 		// Crear Pokémones
 		Pokemon[] pokemons = {
@@ -33,8 +39,8 @@ public class Main {
 
 		// Mostrar información de los Pokémon creados
 		for (Pokemon p : pokemons) {
-			System.out.printf("Pokemon: %s Tipo: %s Nivel: %d Velocidad: %.1f Experiencia: %d Salud: %d\n",
-					p.getNombre(), p.getTipo(), p.getNivel(), p.getVelocidad(), 0, p.getSalud());
+			System.out.printf("Pokemon: %s Tipo: %s Nivel: %d Velocidad: %d Experiencia: %d Salud: %d\n",
+					p.getNombre(), p.getTipo(), p.getNivel(), p.getVelocidad(), 1, p.getSalud());
 		}
 
 		// Intentos de captura

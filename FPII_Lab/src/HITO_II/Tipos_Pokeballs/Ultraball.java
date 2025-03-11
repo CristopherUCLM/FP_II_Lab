@@ -1,4 +1,4 @@
-package Tipos_Pokeballs;
+package HITO_II.Tipos_Pokeballs;
 
 import HITO_II.Pokeball;
 import HITO_II.Pokemon;

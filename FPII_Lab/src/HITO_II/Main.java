@@ -13,7 +13,7 @@ public class Main {
 		pokeballs[0] = new Pokeball(4); // Pokéball clásica
 		pokeballs[1] = new Superball(12, 0); // SuperBall
 		pokeballs[2] = new Ultraball(12, 0.0); // UltraBall
-		pokeballs[3] = new Masterball(10, 0.8); // MasterBall
+		pokeballs[3] = new Masterball(0.8); // MasterBall
 		pokeballs[4] = new Pokeball(4); // Pokéball clásica
 		pokeballs[5] = new Superball(10, 0); // SuperBall
 		

@@ -7,9 +7,9 @@ public class Masterball extends Pokeball{
 
 	protected double estabilidad; //del 0 al 1. 
 	
-	public Masterball(int energia, double establidad) {
+	public Masterball(double establidad) {
 
-		super(energia);
+		super();
 		this.estabilidad = establidad;
 	}
 	

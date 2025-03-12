@@ -5,12 +5,14 @@ public class Entrenador { //Hola cris :D
 	private String nombre;
 	private Pokeball [] invPokeballs = new Pokeball[6];
 	private Pokemon [] equipoPokemon = new Pokemon[6];
+	private int nivel;
 	
 	//Constructor
-	public Entrenador(String nombre, Pokeball [] invPokeballs, Pokemon [] equipoPokemon) {
+	public Entrenador(String nombre, Pokeball [] invPokeballs, Pokemon [] equipoPokemon, int nivel) {
 		this.nombre = nombre;
 		this.invPokeballs = invPokeballs;
 		this.equipoPokemon = equipoPokemon;
+		this.nivel = nivel;
 	}
 	
 	/*//getters////
@@ -42,6 +44,14 @@ public class Entrenador { //Hola cris :D
 		
 		for(int i = 0; i<equipoPokemon.length; i++) {
 			System.out.printf("Pokemon : %s Tipo: %s\n", equipoPokemon[i].getNombre(), equipoPokemon[i].getTipo() );
+		}
+		
+	}
+	
+	public void imprimirInventario() {
+		
+		for(int i = 0; i<invPokeballs.length; i++) {
+			System.out.printf("%d) Pokeball : %s || Energia : %d\n", i, invPokeballs[i].getClass(), invPokeballs[i].getEnergia());
 		}
 		
 	}
@@ -122,8 +132,8 @@ public class Entrenador { //Hola cris :D
 		int indice = 0;
 		for(int i = 0; i < inv.length; i++) {
 			
-			if( inv[i].getEnergia() > 0) {i = indice; break;}
-			else if(i == inv.length - 1) {System.out.println("No hay pokeballs disponibles"); indice = -1; }	//Comprueba que no esté dando por buena la última pokeball con energía menor a 0
+			if( inv[i].getEnergia() > 0) {indice = i; break;}
+			if(i == inv.length - 1) {System.out.println("No hay pokeballs disponibles"); indice = -1; }	//Comprueba que no esté dando por buena la última pokeball con energía menor a 0
 		
 		}
 		
@@ -141,6 +151,7 @@ public class Entrenador { //Hola cris :D
 				return false;
 			}
 		}
+		System.out.println("El equipo está lleno.");
 		return true;
 	}
 	

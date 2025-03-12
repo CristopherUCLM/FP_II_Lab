@@ -4,14 +4,15 @@ public class Pokemon {
 	
 	private String nombre;
 	private String tipo;
-	protected int nivel, velocidad, salud;
+	protected int nivel, velocidad, salud, experiencia;
 	
-	public Pokemon(String nombre, String tipo, int nivel, int velocidad, int salud) {
+	public Pokemon(String nombre, String tipo, int nivel, int velocidad, int salud, int experiencia) {
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.nivel = nivel;
 		this.velocidad = velocidad;
 		this.salud = salud;
+		this.experiencia = experiencia;
 	}
 	
 	//getter
